@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class MapFactory {
 	
-	public static <K,V> Map<Integer, ArrayList<Product>> createMap(int opcion,int Key, ArrayList<Product> Product ){
+	public static <K,V> Map<Integer, ArrayList<Product>> createMap(int opcion ){
 		switch(opcion) {
 			case 1:
 				//HashMAp				

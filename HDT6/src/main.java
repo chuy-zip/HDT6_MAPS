@@ -9,20 +9,83 @@ import java.util.Scanner;
 public class main {
 	public static void main(String[] args) {
 		MapFactory Factory = new MapFactory();
+		StoreManager Manager = new StoreManager();
 		Scanner scan = new Scanner(System.in);		
 		
-		System.out.println("Bienvenido, elige el tipo de estructura que desea usar para explorar el inventario\n");
+		System.out.println("Elige el tipo de estructura que desea usar para explorar el inventario\n");
 		System.out.println("1.HashMap\n"
 						 + "2.TreeMap\n"
 						 + "3.LinkedHashMap\n");
 		
 		int MapType = scan.nextInt();
-		
+		String Option = "";
 		Map<String, ArrayList<Product>> WareHouse = Factory.createMap(MapType);
-		
 		FileReader(WareHouse);
 		
 		System.out.println(WareHouse);
+		
+		
+		Map<String, ArrayList<Product>> ShoppingCart;
+		
+		
+		while(true) {
+			System.out.println("Bienvenido a la teinda online que deseas hacer:\n"
+					+ "1.Agregar un producto al carrito\n"
+					+ "2.Obtener categoria de un producto\n"
+					+ "3.Ver los productos en mi carrito\n"
+					+ "4.Ver carrito ordenados por categoria\n"
+					+ "5.Mostrar todo el inventario disponible\n"
+					+ "6.Mostrar todo el inventario disponible ordenado\n"
+					+ "7.Salir\n");
+			Option = scan.nextLine();
+			
+			switch (Option) {
+			case "1":
+				System.out.println("Ingrese la categoria del articulo");
+				String Category = scan.nextLine();
+				
+				System.out.println("Ingrese el nombre de articulo");
+				String Product = scan.nextLine();
+				
+				System.out.println("Ingrese la cantidad que desea añadir");
+				int Quantity = scan.nextInt();
+				
+				System.out.println("\n");
+				
+				
+				
+				break;
+				
+			case "2":
+				
+				break;
+				
+			case "3":
+				
+				break;
+			
+			case "14":
+				
+				break;
+				
+			case "5":
+				
+				break;
+				
+			case "6":
+				
+				break;
+
+			case "7":
+				System.out.println("Buen dia");
+				System.exit(0);
+				break;
+				
+			}
+			
+		}
+
+		
 		
 	}
 	
@@ -44,7 +107,7 @@ public class main {
 				Product newProduct = new Product(StrLine[1], StrLine[0], Quantity);
 				
 				
-				//In every cicle, the programs looks for the existing key, if it is not found
+				//In every cycle, the programs looks for the existing key, if it is not found
 				//the key and array list is added. If the key is found, a new object is added to 
 				//the category
 				if(StrLine[0].equals("Mueble de terraza")) {
@@ -53,7 +116,6 @@ public class main {
 						ArrayList<Product> ProductsList = new ArrayList<Product>();
 						ProductsList.add(newProduct);
 						map.put("Mueble de terraza", ProductsList);
-						System.out.println("Creado");
 						
 					}
 					
@@ -69,7 +131,6 @@ public class main {
 						ArrayList<Product> ProductsList = new ArrayList<Product>();
 						ProductsList.add(newProduct);
 						map.put("Sillones de masaje", ProductsList);
-						System.out.println("Creado");
 						
 					}
 					
@@ -109,7 +170,7 @@ public class main {
 					}
 				}
 				
-				else if(StrLine[4].equals("Frutas")) {
+				else if(StrLine[0].equals("Fruta")) {
 					//If key 5 returns null
 					if(map.get("Frutas") == null) {
 						ArrayList<Product> ProductsList = new ArrayList<Product>();

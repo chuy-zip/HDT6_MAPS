@@ -18,7 +18,7 @@ public class main {
 		
 		int MapType = scan.nextInt();
 		
-		Map<Integer, ArrayList<Product>> WareHouse = Factory.createMap(MapType);
+		Map<String, ArrayList<Product>> WareHouse = Factory.createMap(MapType);
 		
 		FileReader(WareHouse);
 		
@@ -43,116 +43,121 @@ public class main {
 				int Quantity = rand.nextInt(10 - 0 + 1) + 1;
 				Product newProduct = new Product(StrLine[1], StrLine[0], Quantity);
 				
+				
+				//In every cicle, the programs looks for the existing key, if it is not found
+				//the key and array list is added. If the key is found, a new object is added to 
+				//the category
 				if(StrLine[0].equals("Mueble de terraza")) {
 					
-					//If position 1 is empty
-					if(map.get(1) == null) {
+					if(map.get("Mueble de terraza") == null) {
 						ArrayList<Product> ProductsList = new ArrayList<Product>();
 						ProductsList.add(newProduct);
-						map.put(1, ProductsList);
+						map.put("Mueble de terraza", ProductsList);
+						System.out.println("Creado");
 						
 					}
 					
 					else {
-						//Else, get array list at position 1
-						((ArrayList<Product>) map.get(1)).add(newProduct);
+						
+						((ArrayList<Product>) map.get("Mueble de terraza")).add(newProduct);
 					}
 				}
 				
 				else if(StrLine[0].equals("Sillones de masaje")) {
 					//If position 2 is empty
-					if(map.get(2) == null) {
+					if(map.get("Sillones de masaje") == null) {
 						ArrayList<Product> ProductsList = new ArrayList<Product>();
 						ProductsList.add(newProduct);
-						map.put(2, ProductsList);
+						map.put("Sillones de masaje", ProductsList);
+						System.out.println("Creado");
 						
 					}
 					
 					else {
 						//Else, get array list at position 2
-						((ArrayList<Product>) map.get(2)).add(newProduct);
+						((ArrayList<Product>) map.get("Sillones de masaje")).add(newProduct);
 					}
 				}
 				
 				else if(StrLine[0].equals("Bebidas")) {
 					//If key value 3 is null
-					if(map.get(3) == null) {
+					if(map.get("Bebidas") == null) {
 						ArrayList<Product> ProductsList = new ArrayList<Product>();
 						ProductsList.add(newProduct);
-						map.put(3, ProductsList);
+						map.put("Bebidas", ProductsList);
 						
 					}
 					
 					else {
 						//Else, get array list at position 3
-						((ArrayList<Product>) map.get(3)).add(newProduct);
+						((ArrayList<Product>) map.get("Bebidas")).add(newProduct);
 					}
 				}
 				
 				else if(StrLine[0].equals("Condimentos")) {
 					//if key value 4 returns null
-					if(map.get(4) == null) {
+					if(map.get("Condimentos") == null) {
 						ArrayList<Product> ProductsList = new ArrayList<Product>();
 						ProductsList.add(newProduct);
-						map.put(4, ProductsList);
+						map.put("Condimentos", ProductsList);
 						
 					}
 					
 					else {
 						//Else, get array list at position 4
-						((ArrayList<Product>) map.get(4)).add(newProduct);
+						((ArrayList<Product>) map.get("Condimentos")).add(newProduct);
 					}
 				}
 				
-				else if(StrLine[0].equals("Frutas")) {
+				else if(StrLine[4].equals("Frutas")) {
 					//If key 5 returns null
-					if(map.get(5) == null) {
+					if(map.get("Frutas") == null) {
 						ArrayList<Product> ProductsList = new ArrayList<Product>();
 						ProductsList.add(newProduct);
-						map.put(5, ProductsList);
+						map.put("Frutas", ProductsList);
 						
 					}
 					
 					else {
 						//Else, get array list at position 5
-						((ArrayList<Product>) map.get(5)).add(newProduct);
+						((ArrayList<Product>) map.get("Frutas")).add(newProduct);
 					}
 				}
 				
 				else if(StrLine[0].equals("Carnes")) {
 					//Check if position 6 is empty
-					if(map.get(6) == null) {
+					if(map.get("Carnes") == null) {
 						ArrayList<Product> ProductsList = new ArrayList<Product>();
 						ProductsList.add(newProduct);
-						map.put(6, ProductsList);
+						map.put("Carnes", ProductsList);
 						
 					}
 					
 					else {
 						//Else, get array list at position 6
-						((ArrayList<Product>) map.get(6)).add(newProduct);
+						((ArrayList<Product>) map.get("Carnes")).add(newProduct);
 					}
 				}
 				
 				else if(StrLine[0].equals("Lácteos")) {
 					//Checking if key seven is null
-					if(map.get(7) == null) {
+					if(map.get("Lácteos") == null) {
 						ArrayList<Product> ProductsList = new ArrayList<Product>();
 						ProductsList.add(newProduct);
-						map.put(7, ProductsList);
+						map.put("Lácteos", ProductsList);
 						
 					}
 					
 					else {
 						//Else, get array list at position 7
-						((ArrayList<Product>) map.get(7)).add(newProduct);
+						((ArrayList<Product>) map.get("Lácteos")).add(newProduct);
 					}
 				}
 
 			}
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("Error al leer el archivo");
 		}
 		
 		return map;

@@ -36,7 +36,7 @@ public class StoreManager {
 						CategoryList.add(newUserProduct);
 						UserMap.put(keyCat, CategoryList);
 						System.out.println("Se ha agregado la categoria de: " + keyCat + ", a tu carrito de compras y se agrego el producto solicitado");
-							
+						return;	
 					}
 					//If it is not the first time the user adds something from a category
 					else {	
@@ -87,19 +87,23 @@ public class StoreManager {
 		return "No se encontro: " + Product + ", en el inventario";
 	}
 	
-	public void ShowShoppingCart(Map<String, ArrayList<Product>> UserMap) {
-		
+	public void ShowMapValues(Map<String, ArrayList<Product>> Map) {
+		for(String Category : Map.keySet()) {
+			System.out.println("* Categoria:   " + Category + "\n");
+			
+			ArrayList<Product> ProductsList = Map.get(Category);
+			
+			for (Product ListProduct : ProductsList) {
+				
+				System.out.println("   -" + ListProduct.getName() + ": " + ListProduct.getQuantity());
+				
+			}
+			System.out.println("\n");
+		}
 	}
 	
-	public void ShowOrderedShoppingCart(Map<String, ArrayList<Product>> UserMap) {
+	public void ShowOrderedMapValues(Map<String, ArrayList<Product>> Map) {
 		
 	}
-	
-	public void ShowWarehouseInventory(Map<String, ArrayList<Product>> Inventory) {
-		
-	}
-	
-	public void ShowOrderedWareHouseINventory(Map<String, ArrayList<Product>> Inventory) {
-		
-	}
+
 }

@@ -54,7 +54,7 @@ public class main {
 				break;
 				
 			case "3":
-				System.out.println(ShoppingCart);
+				Manager.ShowMapValues(ShoppingCart);
 				
 				break;
 			
@@ -63,7 +63,7 @@ public class main {
 				break;
 				
 			case "5":
-				
+				Manager.ShowMapValues(WareHouse);
 				break;
 				
 			case "6":

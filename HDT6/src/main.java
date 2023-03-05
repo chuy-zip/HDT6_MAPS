@@ -26,7 +26,6 @@ public class main {
 		String Option = "";
 		while(true) {
 			Option = getUserOption(Option, scan);
-
 			
 			switch (Option) {
 			case "1":
@@ -36,9 +35,10 @@ public class main {
 				System.out.println("Ingrese el nombre de articulo");
 				String Product = scan.nextLine();
 				
-				System.out.println("Ingrese la cantidad que desea añadir");
+				System.out.println("Ingrese la cantidad que desea agregar al carrito");
 				int Quantity = scan.nextInt();
 				
+				Manager.addProductToShoppingCart(Category, Product, Quantity, WareHouse, ShoppingCart);
 				System.out.println("\n");
 				
 				
@@ -54,6 +54,7 @@ public class main {
 				break;
 				
 			case "3":
+				System.out.println(ShoppingCart);
 				
 				break;
 			

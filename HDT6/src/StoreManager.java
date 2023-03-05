@@ -7,7 +7,24 @@ public class StoreManager {
 	}
 	
 	public String getCategoryOfProduct(String Product, Map<String, ArrayList<Product>> Inventory) {
-		return null;
+		
+		for (String key : Inventory.keySet()) {
+			ArrayList<Product> ProductsList = Inventory.get(key);
+			
+			for (Product ListProduct : ProductsList) {
+				
+				String ProductName = ListProduct.getName();
+				
+				if(ProductName.compareToIgnoreCase(Product) == 0) {
+					
+					return "El producto: " + Product + ", es de la categoria: " + ListProduct.getCategory() ;
+					
+				}
+				
+			}
+		}
+		
+		return "No se encontro el: " + Product + ", en el inventario";
 	}
 	
 	public void ShowShoppingCart(Map<String, ArrayList<Product>> UserMap) {

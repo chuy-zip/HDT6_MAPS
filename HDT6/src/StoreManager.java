@@ -1,6 +1,9 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class StoreManager {
 	public void addProductToShoppingCart(String keyCat, String RequestedProduct, int RequestedQuantity, Map<String, ArrayList<Product>> Inventory, Map<String, ArrayList<Product>> UserMap) {
@@ -103,6 +106,25 @@ public class StoreManager {
 	}
 	
 	public void ShowOrderedMapValues(Map<String, ArrayList<Product>> Map) {
+	    ArrayList<String> keyList = new ArrayList<>(Map.keySet());
+	    Collections.sort(keyList);
+	    Map<String, ArrayList<Product>> orderedMap = new LinkedHashMap<>();
+	    
+	    for (String key : keyList) {
+	    	orderedMap.put(key, Map.get(key));
+	    }
+		ShowMapValues(orderedMap);
+		
+	}
+
+	//Uses the TreeMap natural ordering
+	public void ShowOrderedMapValuesTree(Map<String, ArrayList<Product>> Map) {
+		//MapFactory Factory = new MapFactory();
+		//Map<String, ArrayList<Product>> SortedTreeMap = Factory.createMap(2);
+		
+		TreeMap<String, ArrayList<Product>> orderedMap = new TreeMap<>(Map);
+		ShowMapValues(orderedMap);
+		//Reuses the built custom print for the product Arrays
 		
 	}
 

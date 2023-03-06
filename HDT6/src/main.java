@@ -18,6 +18,7 @@ public class main {
 						 + "3.LinkedHashMap");
 		
 		int MapType = scan.nextInt();
+		scan.nextLine(); // descarta los caracteres restantes que no son de tipo int  \n
 		Map<String, ArrayList<Product>> WareHouse = Factory.createMap(MapType);
 		FileReader(WareHouse);
 		
@@ -37,6 +38,7 @@ public class main {
 				
 				System.out.println("Ingrese la cantidad que desea agregar al carrito");
 				int Quantity = scan.nextInt();
+				scan.nextLine();
 				
 				Manager.addProductToShoppingCart(Category, Product, Quantity, WareHouse, ShoppingCart);
 				System.out.println("\n");

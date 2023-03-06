@@ -8,11 +8,9 @@ Sillones de masaje |	Sillones de masajes avanzados
 Sillones de masaje |	Sofás camas
 Bebidas |	Cerveza tibetana Barley
 Bebidas |	Té frios
+Condimentos |	Sirope de regaliz
 Bebidas |	Coca cola 1 litro
 Bebidas |	Coca cola 2 litros
-Condimentos |	Sirope de regaliz
-Condimentos |	Especies Cajun del chef
-Condimentos |	Mezcla Gumbo del chef
 Frutas |	Peras secas
 Frutas |	Pasas
 Frutas |	Manzana roja
@@ -26,4 +24,6 @@ Lácteos |	Queso de cabra
 Lácteos |	Queso Manchego 
 Lácteos |	Leche descremada
 Lácteos |	Leche deslactosada
+Condimentos |	Especies Cajun del chef
+Condimentos |	Mezcla Gumbo del chef
 Lácteos |	Leche entera

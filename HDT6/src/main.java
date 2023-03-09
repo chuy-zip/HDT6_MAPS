@@ -62,6 +62,8 @@ public class main {
 			
 			case "4":
 				
+				Manager.ShowOrderedMapValues(ShoppingCart);
+				
 				break;
 				
 			case "5":
@@ -69,6 +71,8 @@ public class main {
 				break;
 				
 			case "6":
+				
+				Manager.ShowOrderedMapValues(WareHouse);
 				
 				break;
 
